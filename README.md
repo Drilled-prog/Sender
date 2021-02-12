@@ -19,15 +19,15 @@
 ##### Eсли не задан redirect() получаем такой ответ
 ```yaml
 response: 
-	- Удачно отправлено {"success": 1}
-	- Ошибка {"success": 0, "errorReason": null|string, "errorPayload": null|object }
+    - Удачно отправлено {"success": 1}
+    - Ошибка {"success": 0, "errorReason": null|string, "errorPayload": null|object }
 Ошибки:
-	spamFilter:
-		{"success": 0, "errorReason": "ban", "errorPayload": {"unbanAfter": {"hours": 1, "minutes": 59, "seconds": 33} } }
-	badRequest:
-		{"success": 0, "errorReason": "badRequest", "errorPayload": null } (Срабатывает если запрос не с методом POST) 
-	validation:
-		{"success": 0, "errorReason": "validation", "errorPayload": {"field": "user_name", "reason": "required"} }
+    spamFilter:
+        {"success": 0, "errorReason": "ban", "errorPayload": {"unbanAfter": {"hours": 1, "minutes": 59, "seconds": 33} } }
+    badRequest:
+        {"success": 0, "errorReason": "badRequest", "errorPayload": null } (Срабатывает если запрос не с методом POST) 
+    validation:
+        {"success": 0, "errorReason": "validation", "errorPayload": {"field": "user_name", "reason": "required"} }
 ```
 
 #### Example:
