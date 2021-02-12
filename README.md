@@ -1,4 +1,8 @@
-### Example: send.php
+# Sender
+
+Easy send email & spam filter for landing page
+
+## Example: send.php
 
 `redirect('/spasibo-za-zakaz.html')` перенаправление на страницу после отправки формы - это не обязательный параметр, если не указан будет возвращен json на счёт этого ниже
 
@@ -16,20 +20,20 @@
 
 `send()` отправить письмо
 
-##### Eсли не задан redirect() получаем такой ответ
+### Eсли не задан redirect() получаем такой ответ
 Удачно отправлено - `{"success": 1}`
 
 Ошибка - `{"success": 0, "errorReason": null|string, "errorPayload": null|object }`
 
-###### Ошибки
+#### Ошибки
 spamFilter - `{"success": 0, "errorReason": "ban", "errorPayload": {"unbanAfter": {"hours": 1, "minutes": 59, "seconds": 33} } }`
 
 badRequest - `{"success": 0, "errorReason": "badRequest", "errorPayload": null }` (Срабатывает если запрос не с методом POST)
 
 validation - `{"success": 0, "errorReason": "validation", "errorPayload": {"field": "user_name", "reason": "required"} }`
-```
 
-#### Example:
+## Example:
+
 ```php
 require_once('./sender/Sender.php');
 
