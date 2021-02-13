@@ -2,7 +2,23 @@
 
 Easy send email & spam filter for landing page
 
-## Example: send.php
+## Example:
+
+```php
+require_once('./sender/Sender.php');
+
+$sender = new Sender();
+
+$sender->redirect('/');
+$sender->spamFilter(3);
+$sender->to('mymail@gmail.com');
+$sender->subject('Тема письма');
+$sender->addText('Привет, дружок! Прилетел новый заказ:');
+$sender->addField('Имя', 'user_name');
+$sender->addField('Телефон', 'user_phone');
+$sender->addText('Обрабатывай пока горячий, Удачи!');
+$sender->send();
+```
 
 `redirect('/spasibo-za-zakaz.html')` перенаправление на страницу после отправки формы - это не обязательный параметр, если не указан будет возвращен json на счёт этого ниже
 
@@ -32,20 +48,4 @@ badRequest - `{"success": 0, "errorReason": "badRequest", "errorPayload": null }
 
 validation - `{"success": 0, "errorReason": "validation", "errorPayload": {"field": "user_name", "reason": "required"} }`
 
-## Example:
 
-```php
-require_once('./sender/Sender.php');
-
-$sender = new Sender();
-
-$sender->redirect('/');
-$sender->spamFilter(3);
-$sender->to('mymail@gmail.com');
-$sender->subject('Тема письма');
-$sender->addText('Привет, дружок! Прилетел новый заказ:');
-$sender->addField('Имя', 'user_name');
-$sender->addField('Телефон', 'user_phone');
-$sender->addText('Обрабатывай пока горячий, Удачи!');
-$sender->send();
-```
