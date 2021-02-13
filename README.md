@@ -36,7 +36,7 @@ $sender->send();
 
 `send()` отправить письмо
 
-### Eсли не задан redirect() получаем такой ответ (для обработки форм с AJAX запросами)
+### Eсли не задан redirect() (для обработки форм с AJAX запросами) получаем такой ответ:
 Удачно отправлено - `{"success": 1}`
 
 Ошибка - `{"success": 0, "errorReason": null|string, "errorPayload": null|object }`
